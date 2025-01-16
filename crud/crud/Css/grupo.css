@@ -1,0 +1,411 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+/* Botão Voltar no canto superior direito */
+#voltar-btn {
+    position: fixed;
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da borda direita */
+    background-color: transparent;
+    color: #007bff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001; /* Garantir que fique acima de outros elementos */
+}
+
+/* Botão Adicionar Roupa no canto inferior direito */
+#adicionar-roupa-btn {
+    position: fixed;
+    bottom: 20px; /* Distância da parte inferior */
+    right: 20px; /* Distância da borda direita */
+    background-color: #5d615e;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001; /* Garantir que fique acima de outros elementos */
+}
+
+#adicionar-roupa-btn:hover {
+    background-color: #9ca09d;
+}
+/* Modos claro e escuro */
+.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+}
+.dark-mode .roupas-titulo {
+    color: #000000; /* Cor branca para o texto no modo escuro */
+}
+
+/* Estilo para a top-bar */
+.top-bar {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Distribui o espaço entre os elementos */
+    padding: 0 20px; /* Espaçamento interno */
+    height: 60px; /* Altura fixa */
+    background-color: #f1f1f1; /* Cor de fundo para o modo claro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    position: fixed; /* Fixa a top-bar no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que a top-bar fique acima de outros elementos */
+}
+/* Contêiner para o texto "Olá, [nome]" */
+.utilizador-info {
+    margin-right: auto; /* Empurra o texto para a esquerda */
+}
+/* Estilo para o texto "Olá, [nome]" */
+.titulo-utilizador {
+    font-family: 'sans-serif', serif; /* Fonte elegante */
+    font-weight: bold; /* Letras grossas */
+    font-size: 1.0rem; /* Tamanho menor (ajuste conforme necessário) */
+    color: #333333; /* Cor escura para o modo claro */
+    letter-spacing: 1.5px; /* Espaçamento entre as letras */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+/* Ajustes para o modo escuro */
+body.dark-mode .titulo-utilizador {
+    color: #ffffff; /* Cor branca para o modo escuro */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1); /* Sombra sutil no modo escuro */
+}
+
+.top-bar > div {
+    margin-right: 20px;
+}
+
+.top-bar .search-bar form {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar .search-bar button {
+    margin-left: 10px;
+}
+
+.mode-toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.mode-toggle-container .d-flex {
+    flex-direction: row;
+    align-items: center;
+}
+
+.dark-mode .top-bar {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+/* Botão Voltar (X no canto superior direito) */
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+.btn-close:hover {
+    color: #525252;
+}
+
+/* Sidebar estilizada */
+.sidebar {
+    width: 250px;
+    background-color: #f7f7f7;
+    color: #000000;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Modo escuro para a sidebar */
+.dark-mode .sidebar {
+    background-color: #222222; /* Cor de fundo escura */
+    color: #ffffff; /* Cor do texto clara */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra ajustada para o modo escuro */
+}
+.dark-mode .sidebar h2 {
+    color: #ffffff; /* Cor do título no modo escuro */
+}
+
+.dark-mode .sidebar ul {
+    color: #0d0d0d; /* Cor do texto da lista no modo escuro */
+}
+
+.dark-mode .sidebar .user-name {
+    color: #070707; /* Cor do nome do utilizador no modo escuro */
+}
+
+.dark-mode .sidebar .user-icon {
+    color: #040404; /* Cor do ícone no modo escuro */
+}
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1; /* Faz a lista crescer e ocupar o espaço disponível */
+    margin-top: 0; /* Remove o espaço extra acima da lista */
+}
+
+.sidebar li {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar li.admin {
+    background-color: #d1ecf1;
+    border-left: 5px solid #17a2b8;
+    color: #0c5460;
+}
+
+.sidebar li .user-name {
+    font-weight: bold;
+}
+
+.sidebar li .role {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.sidebar li .role.admin {
+    color: #17a2b8;
+    font-weight: bold;
+}
+
+.sidebar li .role.utilizador {
+    color: #5b5c5b;
+    font-weight: bold;
+}
+
+
+
+/* Layout principal */
+.content {
+    margin-left: 250px;
+    padding: 80px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.roupas-list {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.roupas-list h2 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.roupas-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.roupas-list li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.roupas-list img {
+    display: block;
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+/* Estilo para o botão de Filtrar */
+.btn-filtrar {
+    background-color: #007bff; /* Cor de fundo azul */
+    color: white; /* Cor do texto branco */
+    border: none; /* Remove a borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 14px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+
+/* Efeito ao passar o mouse no botão de Filtrar */
+.btn-filtrar:hover {
+    background-color: #0056b3; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+/* Estilo para o modal de filtragem */
+.modal-content {
+    border-radius: 10px; /* Bordas arredondadas para o modal */
+}
+
+.modal-header {
+    background-color: #007bff; /* Cor de fundo azul para o cabeçalho do modal */
+    color: white; /* Texto branco no cabeçalho */
+}
+
+.modal-title {
+    font-weight: bold; /* Título em negrito */
+}
+
+.modal-body {
+    padding: 20px; /* Espaçamento interno do corpo do modal */
+}
+
+.form-label {
+    font-weight: bold; /* Rótulos em negrito */
+}
+
+.form-select {
+    border-radius: 5px; /* Bordas arredondadas para os selects */
+    border: 1px solid #ccc; /* Borda padrão */
+}
+
+.form-select:focus {
+    border-color: #007bff; /* Cor da borda ao focar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+}
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px; /* Reduzir a largura do modal */
+    max-width: 400px; /* Definir o máximo de largura do modal */
+    height: 500px; /* Reduzir a altura do modal */
+    max-height: 500px; /* Definir o máximo de altura do modal */
+    overflow-y: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-content input, .modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.modal-content button {
+    background-color: #505150;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #595b5a;
+}
+.dark-mode .modal-content {
+    background-color: #333; /* Cor de fundo escura para o modal */
+    color: #ffffff; /* Cor de texto branca para o modal */
+}
+
+.dark-mode .modal-content input, .dark-mode .modal-content button {
+    background-color: #444; /* Cor de fundo escura para os inputs e botões */
+    color: #ffffff; /* Cor de texto branca para os inputs e botões */
+    border: 1px solid #555; /* Cor de borda escura para os inputs e botões */
+}
+
+.dark-mode .modal-content button {
+    background-color: #555; /* Cor de fundo escura para o botão */
+}
+
+.dark-mode .modal-content button:hover {
+    background-color: #666; /* Cor de fundo escura para o botão ao passar o mouse */
+}
+
+.dark-mode .modal-content textarea {
+    background-color: #444; /* Cor de fundo escura para o campo de descrição */
+    color: #ffffff; /* Cor de texto branca para o campo de descrição */
+    border: 1px solid #555; /* Cor de borda escura para o campo de descrição */
+}
+.dark-mode .modal-content input[type="file"] {
+    background-color: #444; /* Cor de fundo escura para o botão de buscar foto */
+    color: #ffffff; /* Cor de texto branca para o botão de buscar foto */
+    border: 1px solid #555; /* Cor de borda escura para o botão de buscar foto */
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+    .content {
+        margin-left: 0;
+    }
+    .utilizadores-list {
+        display: none;
+    }
+}
