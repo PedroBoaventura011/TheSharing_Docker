@@ -1,3 +1,40 @@
-docker build -t nunoponte/thesharing_docker:1.0.0 .
+# TheSharing Docker API
 
-docker-compose up
+Este repositório contém a API para interagir com a base de dados do projeto **TheSharing**.
+A API é construída em PHP e permite a realização das operações CRUD (Create, Read, Update, Delete) para gerenciar utilizadores em uma base de dados.
+
+## Funcionalidades
+
+A API oferece as seguintes funcionalidades:
+
+- **GET** `/api/getall.php`: Retorna todos os utilizadores da base de dados.
+- **GET** `/api/getbyid.php?id={id}`: Retorna um utilizador com o `id` especificado.
+- **POST** `/api/create.php`: Cria um novo utilizador.
+- **PUT** `/api/update.php`: Atualiza um utilizador existente.
+- **DELETE** `/api/delete.php?id={id}`: Exclui o utilizador com o `id` especificado.
+
+## Pré-requisitos
+
+- **Docker**: A API está configurada para rodar dentro de um container Docker.
+- **PHP**: A API é desenvolvida em PHP, com conexão a uma base de dados SQLite.
+- **Postman** (ou qualquer cliente HTTP): Para testar os endpoints da API.
+
+## Como rodar a API localmente
+
+Siga os passos abaixo para rodar a API localmente com Docker.
+
+### 1. Clonar o repositório
+
+Primeiro, clone o repositório para o seu ambiente local:
+
+git clone https://github.com/nunoponte/TheSharing_Docker.git
+cd TheSharing_Docker
+docker build -t thesharing_api .
+docker run -p 8080:80 thesharing_api
+
+Testar a API 
+http://localhost:8080/api/getall.php
+http://localhost:8080/api/getabyid.php
+http://localhost:8080/api/create.php
+http://localhost:8080/api/update.php
+http://localhost:8080/api/delete.php
