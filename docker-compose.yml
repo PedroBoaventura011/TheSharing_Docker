@@ -5,6 +5,6 @@ services:
     build: .
     image: thesharing_docker:1.0.0  # Usa a imagem publicada no Docker Hub
     ports:
-      - "8080:80"            # Mapeia a porta 80 do container para a porta 8080 local
+      - "8081:80"            # Mapeia a porta 80 do container para a porta 8080 local
     volumes:
       - .:/var/www/html      # Mapeia os arquivos do projeto local para o container
