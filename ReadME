@@ -24,13 +24,19 @@ A API oferece as seguintes funcionalidades:
 Siga os passos abaixo para rodar a API localmente com Docker.
 
 ### 1. Clonar o repositório
-
-Primeiro, clone o repositório para o seu ambiente local:
-
 git clone https://github.com/PedroBoaventura011/TheSharing_Docker
+
+### 2. Navegar para o diretório do projeto
 cd TheSharing_Docker
+
+### 3.  Construir a imagem Docker
 docker build -t nome-do-user/thesharing_docker .
-docker run -p 8080:80 thesharing_docker ou docker-compose up
+
+### 4. Subir os contêineres com Docker Compose
+docker-compose up
+
+### 5. Executar o contêiner diretamente
+docker run -p 8080:80 thesharing_docker
 
 Testar a API 
 http://localhost:8080/api/getall.php
