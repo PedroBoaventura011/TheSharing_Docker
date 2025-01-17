@@ -38,9 +38,51 @@ docker-compose up
 ### 5. Executar o contêiner diretamente
 docker run -p 8080:80 thesharing_docker
 
+
+
 Testar a API 
-http://localhost:8080/api/getall.php
-http://localhost:8080/api/getabyid.php
-http://localhost:8080/api/create.php
-http://localhost:8080/api/update.php
-http://localhost:8080/api/delete.php
+
+##1. Obter todos os registros
+Endpoit: http://localhost:8080/api/getall.php
+
+##2.
+Endpoit: http://localhost:8080/api/getabyid.php
+
+Exemplo:
+{
+    "id": 2
+}
+
+##3. Criar um novo registro
+Endpoit: http://localhost:8080/api/create.php
+
+Exemplo:
+{
+    "id": 8,
+    "nome": "Carlos",
+    "apelido": "Miguel",
+    "nif": 222222222,
+    "telemovel": 911111111,
+    "email": "carlosmiguel@gmail.com"
+}
+
+##4.
+Endpoit: http://localhost:8080/api/update.php
+
+Exemplo:
+{
+    "id": 8,
+    "nome": "João",
+    "apelido": "Miguel",
+    "nif": 222222222,
+    "telemovel": 911111111,
+    "email": "carlosmiguel@gmail.com"
+}
+
+##5. Deletar um registro
+Endpoit: http://localhost:8080/api/delete.php
+
+Exemplo:
+{
+    "id": 1
+}
